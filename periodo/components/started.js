@@ -31,6 +31,11 @@ const Start = () => {
 
     return (
         <>
+            <div className={styles.slider}></div>
+            <div className={styles.items}>
+                <div className={styles.item1}>We Care About Your Periods</div>
+               
+            </div>
             <div className={styles.container}>
                 <h1 className={styles.title}>Hii Girls, wanna track your periods!!</h1>
                 <h4 className={styles.heading}>Period Cycle: 28 days</h4>
