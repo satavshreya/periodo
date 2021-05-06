@@ -3,12 +3,13 @@ import Link from "next/link"
 import { useUser } from '@auth0/nextjs-auth0';
 
 import stickyNavStyle from "./navbar.module.css"
-
+import "./dark.module.css";
 import { faHome, faUser, faHandHoldingMedical, faNotesMedical, faFileMedical, faCalendarAlt, faAward, faStar, faSignOutAlt, faSignInAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import useThemeSwitcher from "./useThemeSwitcher";
 
 const Navbar = ({ children }) => {
+  const ThemeSwicher = useThemeSwitcher();
   const { user } = useUser();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -22,6 +23,8 @@ const Navbar = ({ children }) => {
       <a >
      <img src="Logo.png" height="64px" width="160px" padding="10px" class="nav-img"></img>
      </a>
+     
+     
      </Link>
      <ul className={click ? "nav-options active " : "nav-options "} >
           <li className="option" onClick={closeMobileMenu}>
@@ -69,6 +72,7 @@ const Navbar = ({ children }) => {
         <a class="Nav-bar">Quiz <FontAwesomeIcon icon={faAward} /></a>
         </Link>
           </li>
+          
 
           <li className="option" onClick={closeMobileMenu}>
           <Link href="/flow">
@@ -92,7 +96,7 @@ const Navbar = ({ children }) => {
           }
 
 
-
+{ThemeSwicher}
 
 
         </ul>
